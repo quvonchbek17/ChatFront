@@ -52,7 +52,7 @@ subscription {
 
 const Chat = () => {
 
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState({});
   const { data } = useQuery(MSGS);
   const [msgs, setMsgs] = useState([]);
   const [foundUser, setFoundUser] = useState({});
@@ -62,6 +62,8 @@ const Chat = () => {
 const { data: newdata } = useSubscription(SUBCRIPTION)
 const { data: user } = useQuery(USERS)
 
+
+
 useEffect(() => {
   if(newdata?.msgs.length){
     setMsgs(newdata?.msgs)
@@ -70,7 +72,6 @@ useEffect(() => {
   }
   setUsers(user?.users)
 
-
     document?.querySelector('main')?.scrollTo({
       top: document?.querySelector('main')?.scrollHeight,
       left: 0,
@@ -78,7 +79,7 @@ useEffect(() => {
     });
 
 
-  }, [data, newdata]);
+  }, [data, newdata, user]);
 
     const [ newMsg ] = useMutation(NEW_MSG, {
       update: (cache, newData) => {
