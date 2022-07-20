@@ -16,7 +16,7 @@ const httpLink = createHttpLink({
 const wsLink = () => {
   const token = window.localStorage.getItem('token')
   return new WebSocketLink({
-    uri: `ws://graphqlchatcha.herokuapp.com/graphql`,
+    uri: `wss://graphqlchatcha.herokuapp.com/graphql`,
     options: {
       reconnect: true,
       timeout: 120000,
