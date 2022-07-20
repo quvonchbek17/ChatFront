@@ -1,0 +1,29 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.forma {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border:1px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: gold;
+}
+
+.login-heading {
+    position: absolute;
+    top: 30px;
+    translate: 50%;
+}
